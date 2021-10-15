@@ -2,6 +2,7 @@ package by.tc.task01.entity.criteria;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Criteria {
 
@@ -21,9 +22,16 @@ public class Criteria {
 	}
 
 	public void add(String searchCriteria, Object value) {
-		criteria.put(searchCriteria, value);
+		this.criteria.put(searchCriteria, value);
 	}
-	
+
+	public Set<String> getCriteriaFieldNames(){
+		return this.getCriteria().keySet();
+	}
+
+	public Object getValueByCriteriaField( String criteriaField){
+		return this.criteria.get(criteriaField);
+	}
 
 
 }
